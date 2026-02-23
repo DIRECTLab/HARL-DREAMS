@@ -1,0 +1,22 @@
+env: "solar_battery"
+env_args:
+  data_dir: "/home/chandler/direct/DER-RL/data/env_data_100kw.csv"
+  episode_len: 336
+  episode_sampling: "random"
+  seed: 0
+  battery_config:
+    charge_max_kw: 100
+    discharge_max_kw: 100
+    battery_cap_kwh: 300
+    soc_min: 0.0
+    soc_max: 1.0
+    efficiency_charge: 1.0
+    efficiency_discharge: 1.0
+    curr_soc: 1.0
+  reward_weights:
+    economic_factor_w: 1.0
+    self_sufficiency_w: 0.2
+    energy_sales_w: 0.2
+    charge_battery_w: 0.2
+    supplement_load_w: 0.2
+    delta_soc_w: 0.2

@@ -66,6 +66,10 @@ def get_task_name(env, env_args):
         task = env_args["task"]
     elif env == "lag":
         task = f"{env_args['scenario']}-{env_args['task']}"
+    elif env == "solar_battery":
+        task = env_args.get("scenario", "solar_battery")
+    else:
+        raise ValueError(f"Unsupported env for task naming: {env}")
     return task
 
 
